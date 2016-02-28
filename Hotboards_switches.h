@@ -1,5 +1,5 @@
 /*
-  Hotboards_switches.h - Driver to control interrupts
+  Hotboards_switches.h - Driver to read interrupts
   Hotboards Dip-switch board (http://hotboards.org)
   Created by Diego Perez, January 16, 2016.
   Released into the public domain.
