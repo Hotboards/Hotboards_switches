@@ -22,7 +22,7 @@
  * {
  *     for(;;){
  *         bool var = sw.read( );
- *         delay( 0.2 );
+ *         delay( 200 );
  *     }
  * }
  * @endcode

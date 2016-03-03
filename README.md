@@ -15,9 +15,9 @@ Constructor para incializar interruptores. Puedes crear de 1 solo sw hasta 8 sw,
 Hotboards_switches sw( 5 );
 /* creamos un dip switchs de 4 sw en los pines 5, 6, 7 y 8.
    En el pin 5 esta el sw0, y en el pin 8 esta el sw3 */
-Hotboards_leds leds( 8, 7, 6, 5 );
+Hotboards_leds dipsw( 8, 7, 6, 5 );
 /* creamos un sw en el pin 9 que da un nivel alto cuando cierra */
-Hotboards_leds led( 9, LOW );
+Hotboards_leds sw( 9, LOW );
 ```
 
 **uint8_t read( uint8_t sw=0xff )**
@@ -71,8 +71,8 @@ if( sw.hasItChange( 1 )){
 Ejemplos
 --------
 
-- [leyendo un interruptor](https://github.com/Hotboards/Hotboards_switches/tree/master/examples/input/input.ino)
+- [Leyendo un interruptor](https://github.com/Hotboards/Hotboards_switches/tree/master/examples/input/input.ino)
 - [Leyendo un dip switch completo](https://github.com/Hotboards/Hotboards_switches/tree/master/examples/dip_switch/dip_switch.ino)
 - [Leyendo un grupo de interruptores o uno solo](https://github.com/Hotboards/Hotboards_switches/tree/master/examples/inputs/inputs.ino)
 - [Leyendo un solo interruptor cuando cambia de valor](https://github.com/Hotboards/Hotboards_switches/tree/master/examples/input_change/input_change.ino)
-- [leyedno un dip-switch cuando cambia su valor](https://github.com/Hotboards/Hotboards_switches/tree/master/examples/dipsw_change/dipsw_change.ino)
+- [Leyedno un dip-switch cuando cambia su valor](https://github.com/Hotboards/Hotboards_switches/tree/master/examples/dipsw_change/dipsw_change.ino)
