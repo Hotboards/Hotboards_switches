@@ -14,7 +14,7 @@ Hotboards_switches::Hotboards_switches( int sw0, bool close )
     begin( 0, sw0 );
 }
 
-Hotboards_switches::Hotboards_switches( int sw1, int sw0, bool close )
+Hotboards_switches::Hotboards_switches( int sw0, int sw1, bool close )
 {
     _sws = 2;
     _close = close;
@@ -22,7 +22,7 @@ Hotboards_switches::Hotboards_switches( int sw1, int sw0, bool close )
     begin( 1, sw1 );
 }
 
-Hotboards_switches::Hotboards_switches( int sw2, int sw1, int sw0, bool close )
+Hotboards_switches::Hotboards_switches( int sw0, int sw1, int sw2, bool close )
 {
     _sws = 3;
     _close = close;
@@ -31,7 +31,7 @@ Hotboards_switches::Hotboards_switches( int sw2, int sw1, int sw0, bool close )
     begin( 2, sw2 );
 }
 
-Hotboards_switches::Hotboards_switches( int sw3, int sw2, int sw1, int sw0, bool close )
+Hotboards_switches::Hotboards_switches( int sw0, int sw1, int sw2, int sw3, bool close )
 {
     _sws = 4;
     _close = close;
@@ -41,7 +41,7 @@ Hotboards_switches::Hotboards_switches( int sw3, int sw2, int sw1, int sw0, bool
     begin( 3, sw3 );
 }
 
-Hotboards_switches::Hotboards_switches( int sw4, int sw3, int sw2, int sw1, int sw0, bool close )
+Hotboards_switches::Hotboards_switches( int sw0, int sw1, int sw2, int sw3, int sw4, bool close )
 {
     _sws = 5;
     _close = close;
@@ -52,7 +52,7 @@ Hotboards_switches::Hotboards_switches( int sw4, int sw3, int sw2, int sw1, int 
     begin( 4, sw4 );
 }
 
-Hotboards_switches::Hotboards_switches( int sw5, int sw4, int sw3, int sw2, int sw1, int sw0, bool close )
+Hotboards_switches::Hotboards_switches( int sw0, int sw1, int sw2, int sw3, int sw4, int sw5, bool close )
 {
     _sws = 6;
     _close = close;
@@ -64,7 +64,7 @@ Hotboards_switches::Hotboards_switches( int sw5, int sw4, int sw3, int sw2, int 
     begin( 5, sw5 );
 }
 
-Hotboards_switches::Hotboards_switches( int sw6, int sw5, int sw4, int sw3, int sw2, int sw1, int sw0, bool close )
+Hotboards_switches::Hotboards_switches( int sw0, int sw1, int sw2, int sw3, int sw4, int sw5, int sw6, bool close )
 {
     _sws = 7;
     _close = close;
@@ -77,7 +77,7 @@ Hotboards_switches::Hotboards_switches( int sw6, int sw5, int sw4, int sw3, int 
     begin( 6, sw6 );
 }
 
-Hotboards_switches::Hotboards_switches( int sw7, int sw6, int sw5, int sw4, int sw3, int sw2, int sw1, int sw0, bool close )
+Hotboards_switches::Hotboards_switches( int sw0, int sw1, int sw2, int sw3, int sw4, int sw5, int sw6, int sw7, bool close )
 {
     _sws = 8;
     _close = close;

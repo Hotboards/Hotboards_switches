@@ -18,12 +18,15 @@
  *
  * Hotboards_switches sw( 5 );
  *
- * int main( void )
+ * void setup( void )
  * {
- *     for(;;){
- *         bool var = sw.read( );
- *         delay( 200 );
- *     }
+ *     
+ * }
+ *
+ * void loop( void )
+ * {
+ *     bool var = sw.read( );
+ *     delay( 200 );
  * }
  * @endcode
  */
@@ -53,7 +56,7 @@ class Hotboards_switches
           *   Hotboards_switches sw( 5, 6 );
           * @endcode
           */
-        Hotboards_switches( int sw1, int sw0, bool close=LOW );
+        Hotboards_switches( int sw0, int sw1, bool close=LOW );
 
         /** Create Hotboards_switches instance for three sw
           * @param sw2 pin where the sw 2 will be read it
@@ -67,7 +70,7 @@ class Hotboards_switches
           *   Hotboards_switches sw( 5, 6, 7 );
           * @endcode
           */
-        Hotboards_switches( int sw2, int sw1, int sw0, bool close=LOW );
+        Hotboards_switches( int sw0, int sw1, int sw2, bool close=LOW );
 
         /** Create Hotboards_switches instance for four sw
           * @param sw3 pin where the sw 3 will be read it
@@ -82,7 +85,7 @@ class Hotboards_switches
           *   Hotboards_switches sw( 5, 6, 7, 8 );
           * @endcode
           */
-        Hotboards_switches( int sw3, int sw2, int sw1, int sw0, bool close=LOW );
+        Hotboards_switches( int sw0, int sw1, int sw2, int sw3, bool close=LOW );
 
         /** Create Hotboards_switches instance for five sw
           * @param sw4 pin where the sw 4 will be read it
@@ -98,7 +101,7 @@ class Hotboards_switches
           *   Hotboards_switches sw( 5, 6, 7, 8, 9 );
           * @endcode
           */
-        Hotboards_switches( int sw4, int sw3, int sw2, int sw1, int sw0, bool close=LOW );
+        Hotboards_switches( int sw0, int sw1, int sw2, int sw3, int sw4, bool close=LOW );
 
         /** Create Hotboards_switches instance for six sw
           * @param sw5 pin where the sw 5 will be read it
@@ -115,7 +118,7 @@ class Hotboards_switches
           *   Hotboards_switches sw( 5, 6, 7, 8, 9, 10 );
           * @endcode
           */
-        Hotboards_switches( int sw5, int sw4, int sw3, int sw2, int sw1, int sw0, bool close=LOW );
+        Hotboards_switches( int sw0, int sw1, int sw2, int sw3, int sw4, int sw5, bool close=LOW );
 
         /** Create Hotboards_switches instance for seven sw
           * @param sw6 pin where the sw 6 will be read it
@@ -133,7 +136,7 @@ class Hotboards_switches
           *   Hotboards_switches sw( 5, 6, 7, 8, 9, 10, 11 );
           * @endcode
           */
-        Hotboards_switches( int sw6, int sw5, int sw4, int sw3, int sw2, int sw1, int sw0, bool close=LOW );
+        Hotboards_switches( int sw0, int sw1, int sw2, int sw3, int sw4, int sw5, int sw6, bool close=LOW );
 
         /** Create Hotboards_switches instance for eight sw
           * @param sw7 pin where the sw 7 will be read it
@@ -152,7 +155,7 @@ class Hotboards_switches
           *   Hotboards_switches sw( 5, 6, 7, 8, 9, 10, 11, 12 );
           * @endcode
           */
-        Hotboards_switches( int sw7, int sw6, int sw5, int sw4, int sw3, int sw2, int sw1, int sw0, bool close=LOW );
+        Hotboards_switches( int sw0, int sw1, int sw2, int sw3, int sw4, int sw5, int sw6, int sw7, bool close=LOW );
 
         /** Read a single sw or the entire Dip-switch state (open=0 or close=1)
           * @return sw state(s)
@@ -163,16 +166,16 @@ class Hotboards_switches
           *   Hotboards_leds sw ( 7 );
           *   bool val = sw.read( );
           *
-          *   // instance an 8 sw dip-sw (pin9->sw7 ..... pin2->sw0)
-          *   Hotboards_switches dipsw( 9, 8, 7, 6, 5, 4, 3, 2 );
+          *   // instance an 8 sw dip-sw (pin2->sw0 ..... pin9->sw7)
+          *   Hotboards_switches dipsw( 2, 3, 4, 5, 6, 7, 8, 9 );
           *   // read the sw values (from 0 to 255)
           *   uint8_t val = dipsw.read( );
           *
-          *   // instance a 4 dip-sw (pin2->sw3 ..... pin5->sw0)
+          *   // instance a 4 dip-sw (pin2->sw0 ..... pin5->sw3)
           *   Hotboards_switches dipsw( 2, 3, 4, 5 );
-          *   // read sw 1 state (pin 4)
+          *   // read sw 1 state (pin 3)
           *   bool val1 = dipsw.write( 1 );
-          *   // read sw 0 state (pin 5)
+          *   // read sw 0 state (pin 2)
           *   bool val2 = dipsw.write( 0 );
           * @endcode
           */
@@ -188,15 +191,15 @@ class Hotboards_switches
           *   if( sw.hasItChange( ))
           *     bool val = sw.read( );
           *
-          *   // instance an 8 sw dip-sw (pin9->sw7 ..... pin2->sw0)
-          *   Hotboards_switches dipsw( 9, 8, 7, 6, 5, 4, 3, 2 );
+          *   // instance an 8 sw dip-sw (pin2->sw0 ..... pin9->sw7)
+          *   Hotboards_switches dipsw( 2, 3, 4, 5, 6, 7, 8, 9 );
           *   // read the sw values (from 0 to 255) if it changes
           *   if( dipsw.hasItChange( ) )
           *     uint8_t val = dipsw.read( );
           *
-          *   // instance a 4 dip-sw (pin2->sw3 ..... pin5->sw0)
+          *   // instance a 4 dip-sw (pin2->sw0 ..... pin5->sw3)
           *   Hotboards_switches dipsw( 2, 3, 4, 5 );
-          *   // read sw 1 state (pin 4) if it changes
+          *   // read sw 1 state (pin 3) if it changes
           *   if( sw.hasItChange( 1 ))
           *     bool val = sw.read( 1 );
           * @endcode
