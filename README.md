@@ -6,7 +6,7 @@ Genial libreria de proposito general para leer interruptores, puedes leerlos uno
 API
 ---
 
-**Hotboards_switches( int sw7, int sw6, int sw5, int sw4, int sw3, int sw2, int sw1, int sw0, bool close=LOW )**
+**Hotboards_switches( int sw0, int sw1, int sw2, int sw3, int sw4, int sw5, int sw6, int sw7, bool close=LOW )**
 
 Constructor para incializar interruptores. Puedes crear de 1 solo sw hasta 8 sw, e indicar si estos dan un valor en alto o bajo cuando se cierran.
 
