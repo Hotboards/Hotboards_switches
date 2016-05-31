@@ -1,7 +1,7 @@
 Hotboards_switches
 ===============
 
-Genial libreria de proposito general para leer interruptores, puedes leerlos uno a la vez y/o varios a la vez. Descarga la libreria en formato [**zip**](https://github.com/Hotboards/Hotboards_switches/archive/master.zip), renombre el archivo ( _solo quita el **-master**_ ) e importala a tu Arduino IDE com dice [aqui](http://developer.mbed.org/cookbook/Working-with-Libraries).
+Genial libreria de proposito general para leer interruptores, puedes leerlos uno a la vez y/o varios a la vez. Descarga la libreria en formato [**zip**](https://github.com/Hotboards/Hotboards_switches/archive/master.zip), renombre el archivo ( _solo quita el **-master**_ ) e importala a tu Arduino IDE com dice [aqui](https://www.arduino.cc/en/Guide/Libraries).
 
 API
 ---
@@ -15,7 +15,7 @@ Constructor para incializar interruptores. Puedes crear de 1 solo sw hasta 8 sw,
 Hotboards_switches sw( 5 );
 /* creamos un dip switchs de 4 sw en los pines 5, 6, 7 y 8.
    En el pin 5 esta el sw0, y en el pin 8 esta el sw3 */
-Hotboards_leds dipsw( 8, 7, 6, 5 );
+Hotboards_leds dipsw( 5, 6, 7, 8 );
 /* creamos un sw en el pin 9 que da un nivel alto cuando cierra */
 Hotboards_leds sw( 9, LOW );
 ```
@@ -29,16 +29,16 @@ Lee el estado de los interruptores en el dip switch creado. Puede ser el valor d
 Hotboards_leds sw ( 7 );
 bool val = sw.read( );
 
-//  creamos un dip-sw de 8 sw (pin9->sw7 ..... pin2->sw0)
-Hotboards_switches dipsw( 9, 8, 7, 6, 5, 4, 3, 2 );
+//  creamos un dip-sw de 8 sw (pin2->sw0 ..... pin9->sw7)
+Hotboards_switches dipsw( 2, 3, 4, 5, 6, 7, 8, 9 );
 // leemos el valor del dip-sw (valores de 0 a 255)
 uint8_t val = dipsw.read( );
 
-// creamos un dip-sw de 4 sw (pin2->sw3 ..... pin5->sw0)
+// creamos un dip-sw de 4 sw (pin2->sw0 ..... pin5->sw3)
 Hotboards_switches dipsw( 2, 3, 4, 5 );
-// leemos el estado del sw 1 (pin 4)
+// leemos el estado del sw 1 (pin 3)
 bool val1 = dipsw.write( 1 );
-// leemos el estado del sw 0 (pin 5)
+// leemos el estado del sw 0 (pin 2)
 bool val2 = dipsw.write( 0 );
 ```
 
@@ -53,16 +53,16 @@ if( sw.hasItChange( )){
     bool val = sw.read( );
 }
 
-// icreamos un dip-sw de 8 sw (pin9->sw7 ..... pin2->sw0)
-Hotboards_switches dipsw( 9, 8, 7, 6, 5, 4, 3, 2 );
+// icreamos un dip-sw de 8 sw (pin2->sw0 ..... pin9->sw7)
+Hotboards_switches dipsw( 2, 3, 4, 5, 6, 7, 8, 9 );
 // leemos el valor del dip-sw (from 0 to 255) si hay un cambio
 if( dipsw.hasItChange( ) ){
     uint8_t val = dipsw.read( );
 }
 
-// creamos un dip-sw de 4 sw (pin2->sw3 ..... pin5->sw0)
+// creamos un dip-sw de 4 sw (pin2->sw0 ..... pin5->sw3)
 Hotboards_switches dipsw( 2, 3, 4, 5 );
-// leemos el esatdo solo del sw 1 (pin 4) si hay un cambio
+// leemos el esatdo solo del sw 1 (pin 3) si hay un cambio
 if( sw.hasItChange( 1 )){
     bool val = sw.read( 1 );
 }
